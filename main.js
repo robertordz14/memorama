@@ -10,6 +10,8 @@ let temporizador = false;
 let timer = 60;
 let timerInicial = 60;
 let tiempoRegresivo=null;
+
+
 //Apuntar a html
 let mostrarMovimientos = document.getElementById('movimientos')
 let mostratAciertos = document.getElementById('aciertos')
@@ -34,7 +36,7 @@ function contarTiempo(){
 function bloquearTarjetas(){
     for (let i = 0; i <= 15; i++) {
         let tarjetaBloqueada = document.getElementById(i)
-        tarjetaBloqueada.innerHTML = numeros[i];
+        tarjetaBloqueada.innerHTML =  `<img src="./images/${numeros[i]}.jpg" alt="">`;
         tarjetaBloqueada.disabled = true;
     }
 }
@@ -53,7 +55,7 @@ function destapar(id){
     if(tarjetasDestapadas==1){
     tarjeta1 = document.getElementById(id);
     primerResultado = numeros[id];
-    tarjeta1.innerHTML = primerResultado;
+    tarjeta1.innerHTML = `<img src="./images/${primerResultado}.jpg" alt="">`;
 
     //deshabilitar boton seleccionado
     tarjeta1.disabled = true;
@@ -61,7 +63,7 @@ function destapar(id){
         //mostrar segundo numero
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
-        tarjeta2.innerHTML = segundoResultado;
+        tarjeta2.innerHTML =  `<img src="./images/${segundoResultado}.jpg" alt="">`;
         //deshabilita segundo boton
         tarjeta2.disabled = true;
 

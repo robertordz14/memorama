@@ -1,8 +1,20 @@
-body {
-    background: rgb(19, 33, 106);
-    background: radial-gradient(circle, rgba(19, 33, 106, 1) 0%, rgba(255, 3, 54, 1) 100%);
-    font-family: sans-serif;
-    color: white;
+:root{
+  --gradient:  linear-gradient(to right, #e80033, #f9a852, #f69653, #f38654, #f07654, #ed6856, #ef5956, #ee4c58, #56c1ab);
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  color: #222;
+  background: beige;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: fondo-anim 7s infinite alternate;
+}
+@keyframes fondo-anim{
+  0%{background-position: left;} /*por defecto*/
+  100%{background-position: right;}
 }
 
 main {
@@ -40,7 +52,7 @@ button:hover {
     border-bottom-right-radius: 8px;
     width: 250px;
     height: 400px;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .estadisticas {
@@ -49,6 +61,9 @@ button:hover {
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
+}
+img{
+    width: 80%;
 }
 
 footer {
