@@ -18,21 +18,28 @@ let mostratAciertos = document.getElementById('aciertos')
 let mostratTiempo = document.getElementById('tiempoRestante')
 let aciertoFinal = document.getElementById('aciertosDos')
 //Generacion de numeros aleatorios
+//Array de pares uno y dos
 let parUno = [];
 let parDos = [];
+//array final
 let numeros = [];
+//ciclo que se repite 7 veces para la generacion de pares
 for (var i = 0; i < 8; i++) {
     i = i++;
+    //genero un numero random entre 0 a 20
     var x = Math.floor(Math.random()*(0-20+1)+20);
+    //si el numero random es diferente al anterior se agrega al array si no, se elimina la vuelta
     if(parDos.indexOf(x)!=-1){i--;continue;}else{parDos.push(x)}
     console.log(`Dos: `+parDos);
   }
+  //Al otro array se le asigna el valor del array anterior desordenado
   parUno = parDos.sort(()=>{return Math.random()-0.5});
   console.log(`Uno: `+parUno);
+  //al array final le concateno los dos arrays para hacer solo uno
   numeros = parDos.concat(parUno);
+  //mezclo los numeros del array final nuevamente
   numeros = numeros.sort(()=>{return Math.random()-0.5});
   console.log(`FINAL `+numeros);
-// console.log(numeros);
 
 
 //funciones
