@@ -16,7 +16,9 @@ body{
   0%{background-position: left;} /*por defecto*/
   100%{background-position: right;}
 }
-
+#background{
+    background-color: rgba(255, 255, 255, 0.2);
+}
 main {
     width: 730px;
     margin: 100px auto 50px;
@@ -34,24 +36,29 @@ h1 {
     text-align: center;
 }
 
-button {
+.par {
     height: 100px;
+    border-color: #ffffff00;
     width: 100px;
     font-size: 40px;
     color: white;
+    background-image:url('./images/back.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
     font-weight: bold;
 }
 
-button:hover {
+.par:hover {
     cursor: pointer;
 }
 
 .section2 {
-    background-color: rgba(255, 255, 255, 0.2);
+border: none;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     width: 250px;
     height: 400px;
+    margin-top: 40px;
     padding: 0 10px;
 }
 
@@ -63,9 +70,8 @@ button:hover {
     box-sizing: border-box;
 }
 img{
-    width: 80%;
+    width: 60%;
 }
-
 footer {
     text-align: center;
 }

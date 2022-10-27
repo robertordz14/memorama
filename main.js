@@ -10,16 +10,30 @@ let temporizador = false;
 let timer = 60;
 let timerInicial = 60;
 let tiempoRegresivo=null;
-
+let numeroPares=null;
 
 //Apuntar a html
 let mostrarMovimientos = document.getElementById('movimientos')
 let mostratAciertos = document.getElementById('aciertos')
 let mostratTiempo = document.getElementById('tiempoRestante')
+let aciertoFinal = document.getElementById('aciertosDos')
 //Generacion de numeros aleatorios
-let numeros = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
-numeros = numeros.sort(()=>{return Math.random()-0.5});
-console.log(numeros);
+let parUno = [];
+let parDos = [];
+let numeros = [];
+for (var i = 0; i < 8; i++) {
+    i = i++;
+    var x = Math.floor(Math.random()*(0-20+1)+20);
+    if(parDos.indexOf(x)!=-1){i--;continue;}else{parDos.push(x)}
+    console.log(`Dos: `+parDos);
+  }
+  parUno = parDos.sort(()=>{return Math.random()-0.5});
+  console.log(`Uno: `+parUno);
+  numeros = parDos.concat(parUno);
+  numeros = numeros.sort(()=>{return Math.random()-0.5});
+  console.log(`FINAL `+numeros);
+// console.log(numeros);
+
 
 //funciones
 function contarTiempo(){
@@ -75,11 +89,11 @@ function destapar(id){
             tarjetasDestapadas=0;
             aciertos++; 
             mostratAciertos.innerHTML=`Aciertos: ${aciertos}`
-
+            aciertoFinal.style.background='green'
             if(aciertos == 8){
                 clearInterval(tiempoRegresivo)
                 mostratAciertos.innerHTML = `Aciertos: ${aciertos} 👍`
-                mostratTiempo.innerHTML= `¡Genial! Solo demoraste ${timerInicial-timer} segundos`
+                mostratTiempo.innerHTML= `¡Genial! Tardaste ${timerInicial-timer} segundos`
                 mostrarMovimientos.innerHTML=  `Movimientos: ${movimientos} ✌` 
             }
         }else{
@@ -90,6 +104,7 @@ function destapar(id){
                 tarjeta1.disabled=false;
                 tarjeta2.disabled=false;
                 tarjetasDestapadas=0;
+                aciertoFinal.style.background='red'
             },1000);
         }
     }
