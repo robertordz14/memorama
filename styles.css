@@ -1,5 +1,5 @@
 :root{
-  --gradient:  linear-gradient(to right, #e80033, #f9a852, #f69653, #f38654, #f07654, #ed6856, #ef5956, #ee4c58, #56c1ab);
+    --gradient:  linear-gradient(to right, #0c4de4, #1a79d8, #4699c9, #1fcbea, #75daea, #61c99e, #31c660, #18c772, #56c1ab);
 }
 *{
   box-sizing: border-box;
@@ -18,6 +18,8 @@ body{
 }
 #background{
     background-color: rgba(255, 255, 255, 0.2);
+    width: auto;
+    height: auto;
 }
 main {
     width: 730px;
@@ -30,6 +32,7 @@ section1 {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 0 10px 10px 10px;
     border-radius: 8px;
+
 }
 
 h1 {
@@ -42,7 +45,7 @@ h1 {
     width: 100px;
     font-size: 40px;
     color: white;
-    background-image:url('./images/back.jpg');
+    background-image:url('./images/back2.jpg');
     background-repeat:no-repeat;
     background-size: 100% 100%;
     font-weight: bold;
@@ -63,14 +66,27 @@ border: none;
 }
 
 .estadisticas {
-    border: 1px solid white;
-    height: 105px;
-    border-radius: 8px;
+    height: 130px;
+    border-radius: 10px;
     padding: 8px 20px;
     box-sizing: border-box;
 }
 img{
     width: 60%;
+}
+.semaforo{
+    display: flex;
+    align-items: center;
+}
+#aciertosDosV, #aciertosDosA, #aciertosDosR{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+#aciertosDosA{
+    background-color:  #ff8400;
 }
 footer {
     text-align: center;

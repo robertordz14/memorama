@@ -16,7 +16,10 @@ let numeroPares=null;
 let mostrarMovimientos = document.getElementById('movimientos')
 let mostratAciertos = document.getElementById('aciertos')
 let mostratTiempo = document.getElementById('tiempoRestante')
-let aciertoFinal = document.getElementById('aciertosDos')
+let aciertoFinalV = document.getElementById('aciertosDosV')
+let aciertoFinalR = document.getElementById('aciertosDosR')
+let aciertoFinalA = document.getElementById('aciertosDosA')
+
 //Generacion de numeros aleatorios
 //Array de pares uno y dos
 let parUno = [];
@@ -27,7 +30,7 @@ let numeros = [];
 for (var i = 0; i < 8; i++) {
     i = i++;
     //genero un numero random entre 0 a 20
-    var x = Math.floor(Math.random()*(0-20+1)+20);
+    var x = Math.floor(Math.random()*(0-32+1)+32);
     //si el numero random es diferente al anterior se agrega al array si no, se elimina la vuelta
     if(parDos.indexOf(x)!=-1){i--;continue;}else{parDos.push(x)}
     console.log(`Dos: `+parDos);
@@ -96,7 +99,9 @@ function destapar(id){
             tarjetasDestapadas=0;
             aciertos++; 
             mostratAciertos.innerHTML=`Aciertos: ${aciertos}`
-            aciertoFinal.style.background='green'
+            aciertoFinalV.style.background='#00ff15'
+            aciertoFinalR.style.background='#FF000056'
+            aciertoFinalA.style.background='#FF830056'
             if(aciertos == 8){
                 clearInterval(tiempoRegresivo)
                 mostratAciertos.innerHTML = `Aciertos: ${aciertos} 👍`
@@ -111,7 +116,9 @@ function destapar(id){
                 tarjeta1.disabled=false;
                 tarjeta2.disabled=false;
                 tarjetasDestapadas=0;
-                aciertoFinal.style.background='red'
+                aciertoFinalV.style.background='#00ff1556'
+                aciertoFinalR.style.background='#FF0000'
+                aciertoFinalA.style.background='#FF830056'
             },1000);
         }
     }
