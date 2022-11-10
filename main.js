@@ -29,7 +29,7 @@ let numeros = [];
 //ciclo que se repite 7 veces para la generacion de pares
 for (var i = 0; i < 8; i++) {
     i = i++;
-    //genero un numero random entre 0 a 20
+    //genero un numero random entre 0 a 32
     var x = Math.floor(Math.random()*(0-32+1)+32);
     //si el numero random es diferente al anterior se agrega al array si no, se elimina la vuelta
     if(parDos.indexOf(x)!=-1){i--;continue;}else{parDos.push(x)}
@@ -116,7 +116,7 @@ function destapar(id){
                 tarjeta1.disabled=false;
                 tarjeta2.disabled=false;
                 tarjetasDestapadas=0;
-                aciertoFinalV.style.background='#00ff1556'
+                aciertoFinalV.style.background='#00ff1520'
                 aciertoFinalR.style.background='#FF0000'
                 aciertoFinalA.style.background='#FF830056'
             },1000);

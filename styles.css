@@ -82,8 +82,6 @@ img{
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
 }
 #aciertosDosA{
     background-color:  #ff8400;
